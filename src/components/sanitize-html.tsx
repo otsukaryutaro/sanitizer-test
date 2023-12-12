@@ -9,7 +9,7 @@ export const SanitizeHtml = () => {
     allowedAttributes: false,
   });
 
-  const fn = () => {
+  const onClick = () => {
     alert(text);
   };
 
@@ -35,7 +35,7 @@ export const SanitizeHtml = () => {
         style={{ color: 'black' }}
         dangerouslySetInnerHTML={{ __html: sanitizedText }}
       />
-      <input type="button" onClick={fn} value="click" />
+      <input type="button" onClick={onClick} value="click" />
     </div>
   );
 };

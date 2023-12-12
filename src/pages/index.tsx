@@ -14,7 +14,19 @@ export default function Home() {
       <main
         style={{ backgroundColor: 'white', color: 'black', paddingLeft: 50 }}
       >
-        {/* NOTE: <a href=javascript:alert('xss')>リンクをクリック</a>を埋め込むとXSS成功する */}
+        {/* 
+          NOTE: 
+          <a href=javascript:alert('xss')>リンクをクリック</a>
+          を埋め込むとXSS成功する 
+        */}
+        {/*
+          NOTE: sanitize-htmlのサンプル
+          const html = "<strong>hello world</strong>";
+          console.log(sanitizeHtml(html));
+          console.log(sanitizeHtml("<img src=x onerror=alert('img') />"));
+          console.log(sanitizeHtml("console.log('hello world')"));
+          console.log(sanitizeHtml("<script>alert('hello world')</script>")); 
+        */}
         <div style={{ paddingTop: 100 }}></div>
         <p>SanitizeHtml</p>
         <SanitizeHtml />

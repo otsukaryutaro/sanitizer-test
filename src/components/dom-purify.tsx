@@ -3,7 +3,7 @@ import { useState } from 'react';
 export const DomPurify = () => {
   const [text, setText] = useState('');
 
-  const fn = () => {
+  const onClick = () => {
     alert(text);
   };
 
@@ -24,7 +24,7 @@ export const DomPurify = () => {
         style={{ color: 'black' }}
         dangerouslySetInnerHTML={{ __html: text }}
       />
-      <input type="button" onClick={fn} value="click" />
+      <input type="button" onClick={onClick} value="click" />
     </div>
   );
 };
