@@ -4,7 +4,7 @@ import DOMPurify from 'isomorphic-dompurify';
 export const DomPurify = () => {
   const [text, setText] = useState('');
 
-  const purifiedText = DOMPurify.sanitize(text);
+  const clean = DOMPurify.sanitize(text);
 
   const onClick = () => {
     alert(text);
@@ -28,8 +28,8 @@ export const DomPurify = () => {
       <div dangerouslySetInnerHTML={{ __html: text }} />
 
       {/* サニタイズした値 */}
-      <div>purified-value: {purifiedText}</div>
-      <div dangerouslySetInnerHTML={{ __html: purifiedText }} />
+      <div>purified-value: {clean}</div>
+      <div dangerouslySetInnerHTML={{ __html: clean }} />
 
       <input type="button" onClick={onClick} value="click" />
     </div>
