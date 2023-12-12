@@ -5,8 +5,9 @@ export const SanitizeHtml = () => {
   const [text, setText] = useState('');
 
   const sanitizedText = sanitizeHtml(text, {
-    allowedTags: false,
-    allowedAttributes: false,
+    // FIXME: lettuceだと設定してるが、これだと意味ない
+    // allowedTags: false,
+    // allowedAttributes: false,
   });
 
   const onClick = () => {

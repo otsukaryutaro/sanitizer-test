@@ -1,7 +1,13 @@
 import { useState } from 'react';
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
 export const DomPurify = () => {
   const [text, setText] = useState('');
+
+  const window = new JSDOM('').window;
+  const purify = DOMPurify(window);
+  const purifiedText = purify.sanitize(text);
 
   const onClick = () => {
     alert(text);
@@ -25,8 +31,8 @@ export const DomPurify = () => {
       <div dangerouslySetInnerHTML={{ __html: text }} />
 
       {/* サニタイズした値 */}
-      <div>purified-value: {''}</div>
-      <div dangerouslySetInnerHTML={{ __html: '' }} />
+      <div>purified-value: {purifiedText}</div>
+      <div dangerouslySetInnerHTML={{ __html: purifiedText }} />
 
       <input type="button" onClick={onClick} value="click" />
     </div>
