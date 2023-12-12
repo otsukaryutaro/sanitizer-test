@@ -15,6 +15,7 @@ export default function Home() {
       <main
         style={{ backgroundColor: 'white', color: 'black', paddingLeft: 50 }}
       >
+        {/* NOTE: <a href=javascript:alert('xss')>リンクをクリック</a>を埋め込むとXSS成功する */}
         <div style={{ paddingTop: 100 }}></div>
         <p>SanitizeHtml</p>
         <SanitizeHtml />
