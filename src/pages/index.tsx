@@ -1,7 +1,6 @@
 import { DomPurify } from '@/components/dom-purify';
 import { SanitizeHtml } from '@/components/sanitize-html';
 import Head from 'next/head';
-import { useState } from 'react';
 
 export default function Home() {
   return (

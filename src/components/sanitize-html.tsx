@@ -1,7 +1,13 @@
 import { useState } from 'react';
+import sanitizeHtml from 'sanitize-html';
 
 export const SanitizeHtml = () => {
   const [text, setText] = useState('');
+
+  const sanitizedText = sanitizeHtml(text, {
+    allowedTags: false,
+    allowedAttributes: false,
+  });
 
   const fn = () => {
     alert(text);
@@ -23,6 +29,11 @@ export const SanitizeHtml = () => {
       <div
         style={{ color: 'black' }}
         dangerouslySetInnerHTML={{ __html: text }}
+      />
+      <div style={{ color: 'black' }}>sanitized-value: {sanitizedText}</div>
+      <div
+        style={{ color: 'black' }}
+        dangerouslySetInnerHTML={{ __html: sanitizedText }}
       />
       <input type="button" onClick={fn} value="click" />
     </div>
