@@ -1,13 +1,10 @@
 import { useState } from 'react';
-import DOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
+import DOMPurify from 'isomorphic-dompurify';
 
 export const DomPurify = () => {
   const [text, setText] = useState('');
 
-  const window = new JSDOM('').window;
-  const purify = DOMPurify(window);
-  const purifiedText = purify.sanitize(text);
+  const purifiedText = DOMPurify.sanitize(text);
 
   const onClick = () => {
     alert(text);
