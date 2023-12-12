@@ -20,12 +20,11 @@ export const SanitizeHtml = () => {
         name="sanitized-text"
         rows={5}
         cols={33}
+        value="It was a dark and stormy night..."
         onChange={(e) => {
           setText(e.target.value);
         }}
-      >
-        It was a dark and stormy night...
-      </textarea>
+      />
 
       {/* そのままの値 */}
       <div>value: {text}</div>
