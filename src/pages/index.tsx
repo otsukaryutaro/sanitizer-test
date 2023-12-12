@@ -1,4 +1,4 @@
-import { DomPurify } from '@/components/dom-purify';
+import { DomPurifyComponent } from '@/components/dom-purify';
 import { SanitizeHtml } from '@/components/sanitize-html';
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
         <SanitizeHtml />
         <div style={{ paddingTop: 100 }}></div>
         <p>DomPurify</p>
-        <DomPurify />
+        <DomPurifyComponent />
         <div style={{ paddingTop: 100 }}></div>
       </main>
     </>

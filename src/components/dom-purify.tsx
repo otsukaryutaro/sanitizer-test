@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DOMPurify from 'isomorphic-dompurify';
 
-export const DomPurify = () => {
+export const DomPurifyComponent = () => {
   const [text, setText] = useState('');
 
   const clean = DOMPurify.sanitize(text);
