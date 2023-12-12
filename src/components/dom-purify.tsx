@@ -10,7 +10,7 @@ export const DomPurify = () => {
   return (
     <div>
       <textarea
-        name="dompurifyed-text"
+        name="dom-purified-text"
         rows={5}
         cols={33}
         onChange={(e) => {
@@ -19,11 +19,15 @@ export const DomPurify = () => {
       >
         It was a dark and stormy night...
       </textarea>
-      <div style={{ color: 'black' }}>value: {text}</div>
-      <div
-        style={{ color: 'black' }}
-        dangerouslySetInnerHTML={{ __html: text }}
-      />
+
+      {/* そのままの値 */}
+      <div>value: {text}</div>
+      <div dangerouslySetInnerHTML={{ __html: text }} />
+
+      {/* サニタイズした値 */}
+      <div>purified-value: {''}</div>
+      <div dangerouslySetInnerHTML={{ __html: '' }} />
+
       <input type="button" onClick={onClick} value="click" />
     </div>
   );

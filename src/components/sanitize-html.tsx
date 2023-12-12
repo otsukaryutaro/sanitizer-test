@@ -25,16 +25,15 @@ export const SanitizeHtml = () => {
       >
         It was a dark and stormy night...
       </textarea>
-      <div style={{ color: 'black' }}>value: {text}</div>
-      <div
-        style={{ color: 'black' }}
-        dangerouslySetInnerHTML={{ __html: text }}
-      />
-      <div style={{ color: 'black' }}>sanitized-value: {sanitizedText}</div>
-      <div
-        style={{ color: 'black' }}
-        dangerouslySetInnerHTML={{ __html: sanitizedText }}
-      />
+
+      {/* そのままの値 */}
+      <div>value: {text}</div>
+      <div dangerouslySetInnerHTML={{ __html: text }} />
+
+      {/* サニタイズした値 */}
+      <div>sanitized-value: {sanitizedText}</div>
+      <div dangerouslySetInnerHTML={{ __html: sanitizedText }} />
+
       <input type="button" onClick={onClick} value="click" />
     </div>
   );
