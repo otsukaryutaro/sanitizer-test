@@ -1,9 +1,28 @@
 import { DomPurifyComponent } from '@/components/dom-purify';
 import { SanitizeHtml } from '@/components/sanitize-html';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    sessionStorage.setItem("currentPage",currentPath); 
+  } ,[])
+
+  useEffect(() => { 
+    const onStorageChange = (e: StorageEvent) => {
+      console.log({e})
+    };
+
+    window.addEventListener("storage", onStorageChange);
+    return () => { 
+      window.removeEventListener("storage", onStorageChange);
+    };
+  },[]);
+
+
   return (
     <>
+      <h1>This is /hoge/index.tsx</h1>
       <main
         style={{ backgroundColor: 'white', color: 'black', paddingLeft: 50 }}
       >

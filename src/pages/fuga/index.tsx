@@ -4,6 +4,7 @@ import { SanitizeHtml } from '@/components/sanitize-html';
 export default function Home() {
   return (
     <>
+      <h1>This is /fuga/index.tsx</h1>
       <main
         style={{ backgroundColor: 'white', color: 'black', paddingLeft: 50 }}
       >
